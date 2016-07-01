@@ -2,31 +2,95 @@
 <html ng-app="gemStore">
   <head>
     <link rel="stylesheet" type="text/css" href="bootstrap.css" />
-    <script type="text/javascript" src="angular.js"></script>
-    <script type="text/javascript" src="products.js"></script>
-    <script type="text/javascript" src="app.js"></script>
   </head>
 
   <body ng-controller="StoreController as store">
     <!--  Store Header  -->
     <header>
       <h1 class="text-center">Flatlander Crafted Gems</h1>
-      <h2 class="text-center">– an Angular store –</h2>
+      <h2 class="text-center">an Angular store</h2>
     </header>
 
     <!--  Products Container  -->
-    <div class="list-group">
+    <div>
       <!--  Product Container  -->
-      <div class="list-group-item" ng-repeat="product in store.products">
-        <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="product in store.products">
+          <h3>
+            {{product.name}}
+            <em class="pull-right">{{product.price | currency}}</em>
+          </h3>
+          <!--<p ng-show="product.images.length">{{product.description}}</p>-->
+          <!-- Image Gallery  -->
+          <div class="gallery" ng-show="product.images.length" ng-controller = "GalleryController as gallery">
+            <div class="img-wrap">
+              <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[gallery.current]}}" />
+            </div>
+          </div>
+          <section ng-init="tab = 1" ng-controller="PanelController as panel">
+            <ul class="nav nav-pills">
+              <li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a> </li>
+              <li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Specification</a> </li>
+              <li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Review</a> </li>
+              <li ng-class="{active:panel.isSelected(4)}"><a href ng-click="panel.selectTab(4)">Thumbnails</a> </li>
+            </ul>
 
-        <!-- Image Gallery  -->
-        <product-gallery></product-gallery>
+            <div class="panel" ng-show="panel.isSelected(1)">
+              <h4>Description</h4>
+              <blockquote>{{product.description}}</blockquote>
+            </div>
+            <div class="panel" ng-show="panel.isSelected(2)">
+              <h4>Specification</h4>
+              <blockquote>
+                <ul class="list-unstyled">
+                  <li>Shine: {{product.shine}}</li>
+                  <li>Rarity: {{product.rarity}}</li>
+                </ul>
+              </blockquote>
+            </div>
+            <div class="panel" ng-show="panel.isSelected(3)">
+              <h4>Review</h4>
+              <blockquote ng-repeat="review in product.reviews">
+                  <strong>{{review.stars}} Stars</strong>
+                  {{review.body}}
+                  <cite class="clearfix">-{{review.author}}</cite>
+              </blockquote>
+              <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+                <blockquote>
+                  <strong>{{reviewCtrl.review.stars}} Stars</strong>
+                  {{reviewCtrl.review.body}}
+                  <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
+                </blockquote>
+                <fieldset class="form-group">
+                  <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                    <option value="">Rate the Product</option>
+                  </select>
+                </fieldset>
+                <fieldset class="form-group">
+                  <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+                </fieldset>
+                <fieldset class="form-group">
+                  <input type="email" ng-model="reviewCtrl.review.author" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+                </fieldset>
+                <fieldset class="form-group">
+                  <input type="submit" value="Submit" class="btn btn-primary pull-right" />
+                </fieldset>
 
-        <!-- Product Tabs  -->
-        <product-tabs></product-tabs>
-      </div>
-
+              </form>
+            </div>
+            <div class="panel" ng-show="panel.isSelected(4)">
+              <h4>Thumbnails</h4>
+              <blockquote>
+                <ul class="list-inline thumbs clearfix">
+                  <li class="small-image pull-left thumbnail" ng-repeat="thumb in product.thumbs"><img ng-src="{{thumb}}" /></li>
+                </ul>
+              </blockquote>
+            </div>
+          </section>
+        </li>
+      </ul>
     </div>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>

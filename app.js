@@ -1,22 +1,40 @@
 (function() {
-  var app = angular.module('gemStore', ['store-directives']);
+  var app = angular.module('gemStore',[]);
 
   app.controller('StoreController', function(){
     var store = this;
-    store.products = [];
-    
+    store.products = gems;
   });
 
-  app.controller('ReviewController', function() {
-    this.review = {};
+    app.controller('PanelController', function(){
+        this.tab = 1;
 
-    this.addReview = function(product) {
-      product.reviews.push(this.review);
+        this.selectTab = function (selectedTab) {
+            this.tab = selectedTab;
+        }
 
-      this.review = {};
-    };
-  });
-  
+        this.isSelected = function (currentTab) {
+            return (this.tab === currentTab);
+        }
+    });
+
+    app.controller("GalleryController", function(){
+        this.current = 0;
+
+        this.setCurrent = function(currentImage){
+            this.current = currentImage || 0;
+        };
+    });
+
+    app.controller("ReviewController", function(){
+        this.review = {};
+
+        this.addReview = function(product){
+            product.reviews.push(this.review);
+            this.review = {};
+        };
+    });
+
     var gems = [
     {
       name: 'Azurite',
@@ -27,9 +45,12 @@
       color: '#CCC',
       faces: 14,
       images: [
-        "images/gem-02.gif",
-        "images/gem-05.gif",
-        "images/gem-09.gif"
+          "img/boy.png",
+          "img/boy-2.png",
+      ],
+      thumbs: [
+          "img/small/builder.png",
+          "img/small/astronaut.png"
       ],
       reviews: [{
         stars: 5,
@@ -42,16 +63,19 @@
       }]
     }, {
       name: 'Bloodstone',
-      description: "Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however.",
+      description: "Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       shine: 9,
       price: 22.90,
       rarity: 6,
       color: '#EEE',
       faces: 12,
       images: [
-        "images/gem-01.gif",
-        "images/gem-03.gif",
-        "images/gem-04.gif"
+          "img/boy-2.png",
+      ],
+      thumbs: [
+          "img/small/assistant.png",
+          "img/small/builder-1.png",
+          "img/small/builder.png"
       ],
       reviews: [{
         stars: 3,
@@ -71,9 +95,11 @@
         color: '#000',
         faces: 6,
         images: [
-          "images/gem-06.gif",
-          "images/gem-07.gif",
-          "images/gem-08.gif"
+            "img/boy-3.png",
+        ],
+        thumbs: [
+            "img/small/assistant.png",
+            "img/small/builder-1.png"
         ],
         reviews: [{
           stars: 1,
