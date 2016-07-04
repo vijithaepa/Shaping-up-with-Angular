@@ -8,7 +8,7 @@
     app.directive("productTitle", function () {
         return {
             restrict: 'E',
-            templateUrl: 'product-title.html',
+            templateUrl: 'html/product-title.html',
             controller: function () {
                 this.current = 0;
 
@@ -23,35 +23,35 @@
     app.directive("productDescription", function () {
         return {
             restriction: 'E',
-            templateUrl: 'product-description.html'
+            templateUrl: 'html/product-description.html'
         };
     });
 
     app.directive("productSpecs", function () {
         return {
             restrict: 'A',
-            templateUrl: "product-specs.html"
+            templateUrl: "html/product-specs.html"
         };
     });
 
     app.directive("productReviews", function () {
         return {
             restrict: 'E',
-            templateUrl: "product-reviews.html"
+            templateUrl: "html/product-reviews.html"
         };
     });
 
     app.directive("productGallery", function () {
         return {
             restrict: 'E',
-            templateUrl: "product-gallery.html"
+            templateUrl: "html/product-gallery.html"
         };
     });
 
     app.directive("productTabs", function () {
         return {
             restrict: 'E',
-            templateUrl: 'product-tabs.html',
+            templateUrl: 'html/product-tabs.html',
             controller: function () {
                 this.tab = 1;
 
