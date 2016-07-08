@@ -6,3 +6,93 @@
 .ng-valid.ng-dirty {
     border-color: green;
 }
+
+
+
+.top-bar {
+    height: 5px;
+    background: #ac2925;
+    margin-bottom: 1px;
+}
+
+.jumbotron {
+    background: url("../img/banner/bn-4.JPG") no-repeat 50% 0;
+    height: 350px;
+    padding: 0px;
+}
+
+.jumbotron [class*="col-"] {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+    overflow: auto;
+    height: 350px;
+}
+
+.jumbotron-content{
+    color: #ffffff;
+}
+
+.jumbotron h1 {
+    font-size: 34px;
+    border-bottom: #ffffff solid 1px;
+    padding-bottom: 10px;
+}
+
+.navbar {
+    margin-bottom: 1px;
+}
+
+.navbar li:hover {
+    background: #e7e7e7;
+}
+
+.bluebox {
+    background: #2e98cc;
+    overflow: hidden;
+    height: 230px;
+    color: #ffffff;
+    padding:0 10px;
+    font-size: 120%;
+}
+
+.bluebox a.readmore {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    background: #2b8cbc;
+    padding: 10px 15px;
+    color: #ffffff;
+}
+
+.bluebox a.readmore:hover {
+    color: #000;
+    background: #20749d;
+}
+
+.redbox {
+    background: #ca2129;
+    overflow: hidden;
+    height: 230px;
+    color: #ffffff;
+    padding:0 10px;
+    font-size: 120%;
+}
+
+.redbox a.readmore {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    background: #bf1e26;
+    padding: 10px 15px;
+    color: #ffffff;
+}
+
+.redbox a.readmore:hover {
+    color: #000;
+    background: #86161b;
+}
+

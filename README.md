@@ -1,4 +1,3 @@
-
 This project contains the basic application of AngularJS. This codes were implemented following a Shaping up with Angular.js(https://www.codeschool.com/courses/shaping-up-with-angular-js) course.
 
 This discuss the topics of
@@ -49,9 +48,3 @@ C:.
         product-directives.js
         products.js
         store-products.js
-
-
-
-
-
-
