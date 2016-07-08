@@ -2,11 +2,13 @@ This project contains the basic application of AngularJS. This codes were implem
 
 This discuss the topics of
 
-1 -  Data Binding
-2 -  Built-in Directives
-3 -  Forms
-4 -  Custom Directives
-5 -  Services
+<ul>
+<li>1 -  Data Binding</li>
+<li>2 -  Built-in Directives</li>
+<li>3 -  Forms</li>
+<li>4 -  Custom Directives</li>
+<li>5 -  Services</li>
+</ul>
 
 Contents :
 ==========
