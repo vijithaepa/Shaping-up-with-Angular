@@ -15,10 +15,10 @@ C:.
 │   ReadMe.html
 │   store.json
 │
-├───css
+├── css
 │       styles.css
 │
-├───html
+├── html
 │       product-description.html
 │       product-gallery.html
 │       product-reviews.html
@@ -26,7 +26,7 @@ C:.
 │       product-tabs.html
 │       product-title.html
 │
-├───img
+├── img
 │   │   boy-1.png
 │   │   boy-2.png
 │   │   boy-3.png
@@ -41,7 +41,7 @@ C:.
 │           ...
 │           ...
 │
-└───js
+└── js
         angular.js
         app.js
         bootstrap.css
