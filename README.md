@@ -2,7 +2,7 @@ This project contains the basic application of AngularJS. This codes were implem
 
 This discuss the topics of
 
-<ul style="list-style: none">
+<ul style='list-style: none'>
 <li>1 -  Data Binding</li>
 <li>2 -  Built-in Directives</li>
 <li>3 -  Forms</li>
@@ -12,7 +12,7 @@ This discuss the topics of
 
 Contents :
 ==========
-<ul style="list-style: none">
+<ul style='list-style: none'>
 <li>Home_Dir</li>
 <li>│   index.html</li>
 <li>│   ReadMe.html</li>
