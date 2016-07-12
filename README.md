@@ -2,7 +2,7 @@ This project contains the basic application of AngularJS and Tweeter Bootstrap.
 This codes were implemented following a <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">Shaping up with AngularJs</a> course and <a href="https://www.udemy.com/learn-to-build-websites-using-twitter-bootstrap/learn/v4/content">Learn to Build Websites using Twitter Bootstrap</a>.
 
 This discuss the Angular JS topics of
-<ul style='list-style: none'>
+<ul style='list-style-type: none'>
 <li>1 -  Data Binding</li>
 <li>2 -  Built-in Directives</li>
 <li>3 -  Forms</li>
@@ -12,7 +12,7 @@ This discuss the Angular JS topics of
 
 Contents :
 ==========
-<ul>
+<ul style='list-style-type: none'>
 <li><root_folder></li>              </li>
 <li>│   .gitignore                  </li>
 <li>│   about-us.html               </li>
