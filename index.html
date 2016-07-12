@@ -12,12 +12,13 @@
     <link href="css/styles.css" rel="stylesheet">
 
 </head>
+
 <body>
 
-<div class="top-bar"></div>
 <!--Top Navigation-->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="top-bar"></div>
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -27,20 +28,20 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html">
-                <img src="img/small/builder.png" align="Site logo">
+                <img class="logo" src="img/small/builder.png" align="Site logo">
             </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Report<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Events</a></li>
+                        <li><a href="events.html">Events</a></li>
                         <li><a href="#">Users</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">Donor Codes</a></li>
@@ -49,7 +50,7 @@
                 <li><a href="#">New Event</a></li>
                 <li><a href="#">Upload Codes</a></li>
             </ul>
-
+            <!-- Right side of navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -57,13 +58,81 @@
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li class="login" data-toggle="modal" data-target="#loginModal"><a href="#">Login</a></li>
+                <li class="register" data-toggle="modal" data-target="#registerModal"><a href="#">Register</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="loginModalLabel">User Login</h4>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="registerModalLabel">User Sign up</h4>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="">
+                    <div class="form-group">
+                        <label for="registerName">Name</label>
+                        <input type="text" class="form-control" id="registerName" placeholder="Full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="registerInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="registerInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword1">Password</label>
+                        <input type="password" class="form-control" id="registerConfirmPassword1" placeholder="Confirm Password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!--Slider section-->
 <div class="jumbotron">
     <div class="container">
@@ -78,51 +147,110 @@
     </div>
 </div>
 
-<!--Latest 3 Events-->
 <div class="container">
+    <!--Latest 3 Events-->
     <div class="row">
         <div class="col-md-4">
             <div class="bluebox">
-                <h3>First Box</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <h3><span class="glyphicon glyphicon-book"></span> Reading...</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="#" id="tooltip-1" data-toggle="tooltip" title="Some tooltip text!">Lorem Ipsum</a> has been the industry's standard dummy text ever since the 1500s.</p>
                 <a class="readmore" href="#">Read More</a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="redbox">
-                <h3>First Box</h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.</p>
+                <h3><span class="glyphicon glyphicon-earphone"></span> Listening</h3>
+                <p>Lorem Ipsum has been the industry's <a href="#" id="tooltip-2" data-toggle="tooltip" title="Some extra tooltip text!">standard dummy text</a> ever since the 1500s, when an unknown printer took a galley of type and scrambled it.</p>
                 <a class="readmore" href="#">Read More</a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="bluebox">
-                <h3>First Box</h3>
+                <h3><span class="glyphicon glyphicon-wrench"></span> Writing</h3>
                 <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
                 <a class="readmore" href="#">Read More</a>
             </div>
         </div>
     </div>
 
-    <!--News Items-->
-    <div class="row">
+    <div class="row pad-top-30">
+        <!--News Items-->
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading panel-blue-heading">
                     <h3 class="panel-title">What's happening</h3>
                 </div>
                 <div class="panel-body">
-                    Panel content
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" src="img/small/assistant.png" alt="First News">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" src="img/small/astronaut.png" alt="Second News">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" src="img/small/builder-1.png" alt="Third News">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--Sidebar-->
         <div class="col-md-4">
+            <!--Quick LInks-->
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    Menu Items
+                </a>
+                <a href="#" class="list-group-item">Home</a>
+                <a href="#" class="list-group-item">About Us</a>
+                <a href="#" class="list-group-item">Contact Us</a>
+                <a href="#" class="list-group-item">New Event</a>
+            </div>
 
+            <!--Quick NOtes-->
+            <div class="gray-list list-group">
+                <a href="#" class="list-group-item active">
+                    <h4 class="list-group-item-heading">List group item heading 01</h4>
+                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">List group item heading 02</h4>
+                    <p class="list-group-item-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </a>
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">List group item heading 03</h4>
+                    <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </a>
+            </div>
         </div>
     </div>
 </div>
-
-
+<footer>
+    Copyright $copy; 2016, Maa Piya Sevana
+</footer>
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -130,5 +258,12 @@
 <script src="js/jquery-2.2.4.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#tooltip-1').tooltip('hide')
+        $('#tooltip-2').tooltip('hide')
+    });
+</script>
 </body>
+
 </html>

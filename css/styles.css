@@ -1,4 +1,11 @@
 
+body{
+    margin-top: 59px;
+}
+.pad-top-10 {padding-top: 10px;}
+.pad-top-20 {padding-top: 20px;}
+.pad-top-30 {padding-top: 30px;}
+
 .ng-invalid.ng-dirty {
      border-color: red;
  }
@@ -6,8 +13,6 @@
 .ng-valid.ng-dirty {
     border-color: green;
 }
-
-
 
 .top-bar {
     height: 5px;
@@ -48,6 +53,30 @@
 
 .navbar li:hover {
     background: #e7e7e7;
+}
+
+li.login a{
+    background: #ca2129;
+    margin-bottom: -10px;
+    color: #ffffff !important;
+    padding-right: 22px;
+    padding-left: 22px;
+}
+
+li.login a:hover, .navbar-default .navbar-nav>li>a:hover{
+    background: #cccccc;
+
+}
+
+li.register a{
+    background: #2f98cc;
+    margin-bottom: -10px;
+    color: #ffffff !important;
+}
+
+li.register a:hover, .navbar-default .navbar-nav>li>a:hover{
+    background: #cccccc;
+
 }
 
 .bluebox {
@@ -96,3 +125,90 @@
     background: #86161b;
 }
 
+.media-body {
+    font-size: 120%;
+}
+
+/*.panel-default > .panel-heading {*/
+
+/*}*/
+
+.panel-blue-heading {
+    background: #2e98cc !important;
+    color: #ffffff !important;
+}
+
+a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.active:hover {
+    background: #ca2129;
+    border: #ca2129;;
+}
+
+.gray-list a.list-group-item.active, .gray-list a.list-group-item.active:focus, .gray-list a.list-group-item.active:hover {
+    background: #f4f4f4;
+    border: #cccccc;
+    color: #666666;
+}
+
+#blog img{
+    width:100%;
+    margin:5px 0 15px 0;
+    border:1px #cccccc solid;
+    padding:3px;
+    border-radius:5px;
+}
+
+#blog a.readmore{
+    background:#2b8cbc;
+    padding:10px 15px;
+    color:#ffffff;
+    text-align:center;
+    display:block;
+    margin-top:20px !important;
+    border-radius:5px;
+}
+
+#blog a.readmore:hover{
+    background:#20749d;
+}
+
+small{
+    padding:5px;
+    background:#f4f4f4;
+    border:#dddddd solid 1px;
+    border-radius:10px;
+    width:100%;
+    display:block;
+    margin:5px 0 10px 0;
+}
+
+iframe.gmap{
+    width:100%;
+    border:#cccccc 1px solid;
+    border-radius:10px;
+    padding:4px;
+}
+
+.greywell{
+    background:#f4f4f4 !important;
+}
+
+#tooltip-1,#tooltip-2{
+    color:#ffffff;
+    border-bottom:dotted 1px #ffffff;
+    padding-bottom:2px;
+}
+
+#tooltip-1:hover,#tooltip-2:hover{
+    text-decoration: none;
+}
+
+.tab-pane{
+    padding-top:10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+    background: #f4f4f4;
+}
